@@ -144,9 +144,9 @@ class AB:
         # Vérification que la différence de hauteur est au plus égale à 1
         if abs(hauteur_gauche - hauteur_droite) <= 1:
             # Vérification que les sous-arbres gauche et droit sont équilibrés
-            if self.gauche and not self.gauche.estEquilibre():
+            if isinstance(self.gauche,AB) and not self.gauche.estEquilibre():
                 return False
-            if self.droite and not self.droite.estEquilibre():
+            if isinstance(self.droite,AB) and not self.droite.estEquilibre():
                 return False
             return True
         else:
